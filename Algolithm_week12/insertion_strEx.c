@@ -15,18 +15,18 @@ void main()
     for (i = 0; i < n; i++)
         scanf("%s", list[i]);
     insertion_string(list, n);
-    printf("Á¤·ÄµÈ µ¥ÀÌÅÍ ¸®½ºÆ®: \n");
+    printf("ÃÂ¤Â·Ã„ÂµÃˆ ÂµÂ¥Ã€ÃŒÃ…Ã Â¸Â®Â½ÂºÃ†Â®: \n");
     for (i = 0; i < n; i++)
         printf("%s\n", list[i]);
 }
 void insertion_string(int a[][10], int n) {
     int i, j;
     char idata[10];
-    for (i = 0; i < n - 1; i++) {
+    for (i = 1; i < n; i++) {
         strcpy(idata, a[i]);
         j = i - 1;
-        while (strcmp(a[j], idata) > 0 && j >= 0) {
-            strcpy(a[j + 1], a[i]);
+        while (j >= 0 && strcmp(a[j], idata) > 0) {
+            strcpy(a[j + 1], a[j]);
             j--;
         }
         strcpy(a[j + 1], idata);
